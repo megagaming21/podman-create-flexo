@@ -37,6 +37,9 @@ sudo ufw status
 ```bash
 # On a separate archlinux machine or container
 
+# Become root
+su
+
 # Rename the mirror file
 mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
 
@@ -52,11 +55,11 @@ Sometimes I get an invalid signature or corrupt package error, usually when doin
 
 On the client machine just run
 ```bash
-pacman -Scc
+sudo pacman -Scc
 ```
 To clear the pacman cache, the flexo pacman cache server will still have its cache so the pacman update should run quicker and hopefully not give the same error.
 ```bash
-pacman -Syu
+sudo pacman -Syu
 ```
 
 Otherwise you will need to delete the corrupted package and package signature of the flexo cache

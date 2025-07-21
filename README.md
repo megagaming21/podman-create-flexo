@@ -22,6 +22,12 @@ chmod +x *.sh
 
 # A new podman container should now be running
 podman ps
+
+# You should probably open the port within your LAN
+sudo ufw status
+sudo ufw allow from 192.168.1.0/24 to any port 7878
+sudo ufw reload
+sudo ufw status
 ```
 
 # Test the pacman cache server

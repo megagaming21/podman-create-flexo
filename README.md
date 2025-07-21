@@ -4,7 +4,7 @@ Bash script to create a freshly updated flexo (local pacman cache server) podman
 "Flexo is a caching proxy for pacman, the package manager of Arch Linux."
 https://github.com/nroi/flexo
 
-It basically speeds up pacman downloads, automatically uses updated mirrors, and reduces pacman bandwith usage if you re-install archlinux or have more than one archlinux install.
+It basically speeds up pacman downloads, automatically uses fast/latest mirrors, and reduces pacman bandwith usage if you re-install archlinux or have more than one archlinux install.
 
 # Usage
 ```bash

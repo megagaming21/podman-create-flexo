@@ -37,3 +37,23 @@ echo 'Server = http://192.168.1.7:7878/$repo/os/$arch' > /etc/pacman.d/mirrorlis
 # This also works for podman/docker containers including build files
 RUN echo 'Server = http://192.168.1.7:7878/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 ```
+
+# Caveats
+Sometimes I get an invalid signature or corrupt package error, usually when doing a big update and a package fails to download because it was too slow.
+
+On the client machine just run
+```bash
+pacman -Scc
+```
+To clear the pacman cache, the flexo pacman cache server will still have its cache so the pacman update should run quicker and hopefully not give the same error.
+```bash
+pacman -Syu
+```
+
+Otherwise you will need to delete the corrupted package and package signature of the flexo cache
+```bash
+# On the flexo server
+rm /var/cache/flexo/(package)*
+```
+
+And run the two pacman commands above on the client machine as well.

@@ -17,6 +17,9 @@ git clone https://github.com/megagaming21/podman-create-flexo.git
 cd podman-create-flexo
 chmod +x *.sh
 
+# Change the cache directory
+nano ./create_flexo.sh
+
 # Run the script
 ./create_flexo.sh
 
